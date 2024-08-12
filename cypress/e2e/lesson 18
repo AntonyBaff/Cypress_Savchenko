@@ -1,0 +1,89 @@
+//пошук елементів на сторінці
+// .class_name
+// #element_ID
+// h1
+// input[name="Test"]
+
+// cy.get('.class_name')
+// cy.get('#element_ID')
+// cy.get('h1')
+// cy.get('input[name="Test"]')
+
+// cy.contains('Login')
+// cy.contains('button', 'Register')
+
+// cy.get('.class_name').find('.chil')
+
+// cy.get('.form').within(() => {
+//     cy.get('input[name="name"]').type('name')
+//     cy.get('input[name="password"]').type('Qwerty123')
+// }
+// )
+
+// cy.get('.class1 .class2')
+
+// cy.get('.form').within(() => {
+//     cy.contains('Login')
+// }
+// )
+
+// ///////Фильтрация//////////////
+
+// cy.get('li:first')     cy.get('li').first  cy.get('li'.eq(0);) //находим первій єлемент списка
+// cy.get('li:last')      cy.get('li').last   cy.get('li').eq(10)
+
+// cy.get('li:nth-child(2)')
+
+// ////////найти все єлементі в которіх есть класс/////////
+// cy.get('li').filter('.class1')
+
+// cy.get('button').filter(':visible') //хотим увидеть все видиміе кнопки на странице
+
+// cy.get('li').eq(2);
+
+// /////метод NOT/////// все єлементі списка которіе не имеют class1
+// cy/get('li').not('.class1')
+
+// //////////////ALIAS////////////////
+// cy.get('#element_ID').as('Name') //
+
+// //для запитів Аліас
+//   cy.intercept('GET', 'app/gid_ID').as('IS')
+
+//   cy.get('@Name').type('AntonyBaff')
+
+// /////Робота з множинами 1.Єлемент, 2.Его индекс, 3.Весь набор єлесентов
+// cy.get('li').each($el1, index, $list) =>{
+//     cy.wrap('$el1').click()
+// }
+
+// cy.get('li').then($list) =>{
+//     expect($list).toHave.lenght(5)
+// }
+
+
+
+
+//////////////////////////example///////////////////
+describe('Add cars', () => {
+    const {username, password} = Cypress.env;
+    before(() => {
+      cy.visit(`https://guest:welcome2qauto@qauto.forstudy.space/`, {
+        failOnStatusCode: false,
+      });
+    });
+  
+  
+    it('type guest login', () => {
+      cy.get("button.header-link.-guest", {timeout:1000}).click();
+      cy.url().should("eq", `${Cypress.config('baseUrl')}/panel/garage`)
+      cy.get("button.btn-primary", {timeout:1000}).click();
+      cy.get('label[for="addCarBrand"]').should("be.visible")
+      cy.get("input#addCarMileage").type(Math.random())
+      cy.get('div.modal-content').find("button.btn.btn-primary").should('be.enabled').click();
+      cy.get('div.car-heading').should('be.visible').within(() => {
+        cy.get('p.car_name').should('contain.text', 'Audi TT');
+        cy.get('img.car-logo_img').should('have.attr', 'SRC', 'https://qauto.forstudy.space/public/images/brands/audi.png');
+    })
+    })
+  })
