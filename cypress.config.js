@@ -5,24 +5,19 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-
+    baseUrl: 'https://qauto.forstudy.space', 
     viewportWidth: 1280,
     viewportHeight: 720,
-    //video: true,
+    //video: false,
     //videosFolder: 'videos',
     //screenshotsFolder: 'screenshots',
     retries: {
       runMode: 2,
       openMode: 0
     },
-    // baseUrl: 'https://example.cypress.io',
-    // env: {
-    //   username: "test",
-    //   password: "123",
-    // }
-    // component: {
-    //   specPattern: 'src/**/*.cy.{js,jsx,ts,tsx}'
-    //}
-
+    supportFile: 'cypress/support/index.js',
+    env: {
+      skipBeforeEach: false,
+    },
   },
 });
