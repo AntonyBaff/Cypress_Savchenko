@@ -1,13 +1,16 @@
-Cypress.Commands.add('login', () => {
-    cy.visit(`https://guest:welcome2qauto@qauto.forstudy.space/`)
-
-    cy.get('button.btn.btn-outline-white.header_signin').click();
-
-    cy.get('input#signinEmail').type(Cypress.env('loginEmail'));
-    cy.get('input#signinPassword').type(Cypress.env('loginPassword'), { log: false });
-
-    cy.get('div.modal-footer.d-flex.justify-content-between')
-      .find('button.btn.btn-primary').click();
-
+Cypress.Commands.add('inventoryPage', () => {
+    cy.visit('https://www.saucedemo.com/');
+    cy.get('input[name="user-name"]').type('standard_user');
+    cy.get('input[name="password"]').type('secret_sauce');
+    cy.get('div.login-box').find('input#login-button').click();
+  
+    // Сохранение куки после логина
+    cy.getCookie('session-username').then((cookie) => {
+      Cypress.env('session-username', cookie.value);
+    });
+  });
+  
+  Cypress.Commands.add('restoreSession', () => {
+    cy.setCookie('session-username', Cypress.env('session-username'));
   });
 

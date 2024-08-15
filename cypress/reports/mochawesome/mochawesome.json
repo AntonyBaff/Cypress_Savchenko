@@ -1,0 +1,244 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 7,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-08-13T12:21:57.653Z",
+    "end": "2024-08-13T12:22:39.628Z",
+    "duration": 41975,
+    "testsRegistered": 8,
+    "passPercent": 87.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2abf7de3-150b-4a95-ab9c-cda2e38de722",
+      "title": "",
+      "fullFile": "cypress/e2e/Homework_19.cy.js",
+      "file": "cypress/e2e/Homework_19.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "30a52c72-d724-45db-8361-aa40f00810e7",
+          "title": "Check Registration pop-up",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check Name field",
+              "fullTitle": "Check Registration pop-up Check Name field",
+              "timedOut": null,
+              "duration": 3626,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Empty field\ncy.get('input#signupName').click();\ncy.get('input#signupLastName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Name required');\ncy.get('input#signupName').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data\ncy.get('input#signupName').type('1');\ncy.get('input#signupLastName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Name is invalid');\ncy.get('div.invalid-feedback').should('contain.text', 'Name has to be from 2 to 20 characters long');\ncy.get('input#signupName').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong length 1\ncy.get('input#signupName').clear();\ncy.get('input#signupName').type('a');\ncy.get('div.invalid-feedback').should('contain.text', 'Name has to be from 2 to 20 characters long');\ncy.get('input#signupName').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong length 21\ncy.get('input#signupName').clear();\ncy.get('input#signupName').type('aaaaaaaaaaaaaaaaaaaaG');\ncy.get('div.invalid-feedback').should('contain.text', 'Name has to be from 2 to 20 characters long');\ncy.get('input#signupName').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Positive scenario\ncy.get('input#signupName').clear();\ncy.get('input#signupName').type('Antony');\ncy.get('input#signupLastName').click();\ncy.get('div.invalid-feedback').should('not.contain.text', 'Name required');\ncy.get('div.invalid-feedback').should('not.contain.text', 'Name is invalid');\ncy.get('div.invalid-feedback').should('not.contain.text', 'Name has to be from 2 to 20 characters long');",
+              "err": {},
+              "uuid": "03d4c782-8da3-4312-afaf-3405195a0e32",
+              "parentUUID": "30a52c72-d724-45db-8361-aa40f00810e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check Last Name field",
+              "fullTitle": "Check Registration pop-up Check Last Name field",
+              "timedOut": null,
+              "duration": 2267,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Empty field\ncy.get('input#signupLastName').click();\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Last name required');\ncy.get('input#signupLastName').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data\ncy.get('input#signupLastName').type('1');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Last name is invalid');\ncy.get('div.invalid-feedback').should('contain.text', 'Last name has to be from 2 to 20 characters long');\ncy.get('input#signupLastName').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong length 1\ncy.get('input#signupLastName').clear();\ncy.get('input#signupLastName').type('a');\ncy.get('div.invalid-feedback').should('contain.text', 'Last name has to be from 2 to 20 characters long');\ncy.get('input#signupLastName').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong length 21\ncy.get('input#signupLastName').clear();\ncy.get('input#signupLastName').type('aaaaaaaaaaaaaaaaaaaaG');\ncy.get('div.invalid-feedback').should('contain.text', 'Last name has to be from 2 to 20 characters long');\ncy.get('input#signupLastName').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Positive scenario\ncy.get('input#signupLastName').clear();\ncy.get('input#signupLastName').type('Baff');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('not.contain.text', 'Last name required');\ncy.get('div.invalid-feedback').should('not.contain.text', 'Last name is invalid');\ncy.get('div.invalid-feedback').should('not.contain.text', 'Last name has to be from 2 to 20 characters long');",
+              "err": {},
+              "uuid": "09acd2cc-a64a-4cbd-8223-0ec9a2bd4fa1",
+              "parentUUID": "30a52c72-d724-45db-8361-aa40f00810e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check Email field",
+              "fullTitle": "Check Registration pop-up Check Email field",
+              "timedOut": null,
+              "duration": 2022,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// For empty field and border color red\ncy.get('input#signupEmail').click();\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Email required');\ncy.get('input#signupEmail').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n//Wrong data and border color red\ncy.get('input#signupEmail').type('111');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Email is incorrect');\ncy.get('input#signupEmail').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Positive scenario\ncy.get('input#signupEmail').clear();\ncy.get('input#signupEmail').type('111@ga.com');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('not.contain.text', 'Email required');\ncy.get('div.invalid-feedback').should('not.contain.text', 'Email is incorrect');\ncy.get('input#signupEmail').should('not.have.css', 'border-color', 'rgb(220, 53, 69)');",
+              "err": {},
+              "uuid": "11ee82c2-5ebc-4bf3-8005-0d62d38b8a0c",
+              "parentUUID": "30a52c72-d724-45db-8361-aa40f00810e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check Password field",
+              "fullTitle": "Check Registration pop-up Check Password field",
+              "timedOut": null,
+              "duration": 3830,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// For empty field\ncy.get('input#signupPassword').click();\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Password required');\ncy.get('input#signupPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data minimum symbols -1\ncy.get('input#signupPassword').type('123456');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data with maximum symbols +1\ncy.get('input#signupPassword').clear();\ncy.get('input#signupPassword').type('12345678901234aQ');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data only numbers\ncy.get('input#signupPassword').clear();\ncy.get('input#signupPassword').type('123456789012345');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data only small letters\ncy.get('input#signupPassword').clear();\ncy.get('input#signupPassword').type('qwertyuiop');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data only BIG letters\ncy.get('input#signupPassword').clear();\ncy.get('input#signupPassword').type('QWERTYUIOP');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Positive scenarios\ncy.get('input#signupPassword').clear();\ncy.get('input#signupPassword').type(Cypress.env('loginPassword'), {\n  log: false\n});\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('not.contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupPassword').should('not.have.css', 'border-color', 'rgb(220, 53, 69)');",
+              "err": {},
+              "uuid": "e8fc6d26-9ef2-4819-9073-a7a1164eeacd",
+              "parentUUID": "30a52c72-d724-45db-8361-aa40f00810e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check Re-enter Password field",
+              "fullTitle": "Check Registration pop-up Check Re-enter Password field",
+              "timedOut": null,
+              "duration": 4659,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// For empty field\ncy.get('input#signupPassword').type('Qwerty24');\ncy.get('input#signupRepeatPassword').click();\ncy.get('input#signupPassword').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Re-enter password required');\ncy.get('input#signupRepeatPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data minimum symbols -1\ncy.get('input#signupRepeatPassword').type('123456');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupRepeatPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data with maximum symbols +1\ncy.get('input#signupRepeatPassword').clear();\ncy.get('input#signupRepeatPassword').type('12345678901234aQ');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupRepeatPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data only numbers\ncy.get('input#signupRepeatPassword').clear();\ncy.get('input#signupRepeatPassword').type('123456789012345');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupRepeatPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data only small letters\ncy.get('input#signupRepeatPassword').clear();\ncy.get('input#signupRepeatPassword').type('qwertyuiop');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupRepeatPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Wrong data only BIG letters\ncy.get('input#signupRepeatPassword').clear();\ncy.get('input#signupRepeatPassword').type('QWERTYUIOP');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupRepeatPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Passwords do not match\ncy.get('input#signupRepeatPassword').clear();\ncy.get('input#signupRepeatPassword').type('Qwerty23');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('contain.text', 'Passwords do not match');\ncy.get('input#signupRepeatPassword').should('have.css', 'border-color', 'rgb(220, 53, 69)');\n// Positive scenarios\ncy.get('input#signupRepeatPassword').clear();\ncy.get('input#signupRepeatPassword').type('Qwerty24');\ncy.get('input#signupName').click();\ncy.get('div.invalid-feedback').should('not.contain.text', 'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter');\ncy.get('input#signupRepeatPassword').should('not.have.css', 'border-color', 'rgb(220, 53, 69)');",
+              "err": {},
+              "uuid": "a0f6e8bf-dcf0-4027-bb03-f23397b7e115",
+              "parentUUID": "30a52c72-d724-45db-8361-aa40f00810e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check Register button",
+              "fullTitle": "Check Registration pop-up Check Register button",
+              "timedOut": null,
+              "duration": 1842,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// All fields empty\ncy.get('div.modal-footer').find('button.btn.btn-primary').should('be.disabled');\n// Name field filled\ncy.get('input#signupName').type('Antony');\ncy.get('div.modal-footer').find('button.btn.btn-primary').should('be.disabled');\n// Name and Last Name filled\ncy.get('input#signupLastName').type('Baff');\ncy.get('div.modal-footer').find('button.btn.btn-primary').should('be.disabled');\n// Name, Last Name and Email filled\ncy.get('input#signupEmail').type('111@ga.com');\ncy.get('div.modal-footer').find('button.btn.btn-primary').should('be.disabled');\n// Name, Last Name, Email and Password filled\ncy.get('input#signupPassword').type('Qwerty24');\ncy.get('div.modal-footer').find('button.btn.btn-primary').should('be.disabled');\n// Name, Last Name, Email, Password and Re-enter Password filled\ncy.get('input#signupRepeatPassword').type('Qwerty24');\ncy.get('div.modal-footer').find('button.btn.btn-primary').should('not.be.disabled');",
+              "err": {},
+              "uuid": "af361bcf-6e33-44de-b55a-b632d8c7d87b",
+              "parentUUID": "30a52c72-d724-45db-8361-aa40f00810e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Registration new user",
+              "fullTitle": "Check Registration pop-up Registration new user",
+              "timedOut": null,
+              "duration": 6814,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Name\ncy.get('input#signupName').type('Antonyy');\n// Last Name\ncy.get('input#signupLastName').type('Bafff');\n// Email\ncy.get('input#signupEmail').type('AntonyBaff3.doe@example.com');\n// Password\ncy.get('input#signupPassword').type('Password123!');\n// Re-enter password\ncy.get('input#signupRepeatPassword').type('Password123!');\n// Click Register button\ncy.get('div.modal-footer').find('button.btn.btn-primary').click();\n// Check that user successfully registered\ncy.url().should('include', 'https://qauto.forstudy.space/panel/garage');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'https://qauto.forstudy.space/' to include 'https://qauto.forstudy.space/panel/garage'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'https://qauto.forstudy.space/' to include 'https://qauto.forstudy.space/panel/garage'\n    at Context.eval (webpack:///./cypress/e2e/Homework_19.cy.js:222:17)",
+                "diff": null
+              },
+              "uuid": "ff44c6e0-43cf-451b-bab2-2fc38d8be563",
+              "parentUUID": "30a52c72-d724-45db-8361-aa40f00810e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Sign In",
+              "fullTitle": "Check Registration pop-up Sign In",
+              "timedOut": null,
+              "duration": 2330,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Cypress.env('skipBeforeEach', true);\ncy.login();\nCypress.env('skipBeforeEach', false);",
+              "err": {},
+              "uuid": "92a68a81-0c45-4332-8b0d-3b36f1aacc4c",
+              "parentUUID": "30a52c72-d724-45db-8361-aa40f00810e7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "03d4c782-8da3-4312-afaf-3405195a0e32",
+            "09acd2cc-a64a-4cbd-8223-0ec9a2bd4fa1",
+            "11ee82c2-5ebc-4bf3-8005-0d62d38b8a0c",
+            "e8fc6d26-9ef2-4819-9073-a7a1164eeacd",
+            "a0f6e8bf-dcf0-4027-bb03-f23397b7e115",
+            "af361bcf-6e33-44de-b55a-b632d8c7d87b",
+            "92a68a81-0c45-4332-8b0d-3b36f1aacc4c"
+          ],
+          "failures": [
+            "ff44c6e0-43cf-451b-bab2-2fc38d8be563"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 27390,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

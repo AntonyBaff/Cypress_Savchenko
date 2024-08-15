@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-08-13T12:22:41.079Z",
+    "end": "2024-08-13T12:22:42.542Z",
+    "duration": 1463,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4ce79c66-4be7-4c61-921e-61e7c154c75c",
+      "title": "",
+      "fullFile": "cypress/e2e/homework_18.cy.js",
+      "file": "cypress/e2e/homework_18.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2af1c7db-117b-41a6-9503-d69119cf7e8b",
+          "title": "Find buttons in header and footer",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "find buttons",
+              "fullTitle": "Find buttons in header and footer find buttons",
+              "timedOut": null,
+              "duration": 1347,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('div.hero-descriptor').find(\"button.hero-descriptor_btn.btn.btn-primary\").should(\"be.visible\");\ncy.get('a.socials_link').first().should('have.attr', 'href', 'https://www.facebook.com/Hillel.IT.School');\ncy.get('a.socials_link').eq(1).should('have.attr', 'href', 'https://t.me/ithillel_kyiv');\ncy.get('a.socials_link').eq(2).should('have.attr', 'href', 'https://www.youtube.com/user/HillelITSchool?sub_confirmation=1');\ncy.get('a.socials_link').eq(3).should('have.attr', 'href', 'https://www.instagram.com/hillel_itschool/');\ncy.get('a.socials_link').last().should('have.attr', 'href', 'https://www.linkedin.com/school/ithillel/');\ncy.get('a.contacts_link.display-4').should('have.attr', 'href', 'https://ithillel.ua');\ncy.get('a.contacts_link.h4').should('have.attr', 'href', 'mailto:developer@ithillel.ua');",
+              "err": {},
+              "uuid": "fc0a7f06-3541-42a3-8cf0-9ca3699b8aae",
+              "parentUUID": "2af1c7db-117b-41a6-9503-d69119cf7e8b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fc0a7f06-3541-42a3-8cf0-9ca3699b8aae"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1347,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
