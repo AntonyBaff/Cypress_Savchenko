@@ -4,7 +4,7 @@ describe('API Testing with Cypress', () => {
 
   cy.request({
     method: 'POST',
-    url: 'https://qauto.forstudy.space/api/auth/signin', // URL к вашему API логина
+    url: 'https://qauto.forstudy.space/api/auth/signin',
     body: {
       email: 'AntonyBaff1.doe@example.com',
       password: 'Password123!'
@@ -15,7 +15,7 @@ describe('API Testing with Cypress', () => {
 it('GET CARS', () => {
   cy.request({
     method: 'GET',
-    url: 'https://qauto.forstudy.space/api/cars', // Замените на ваш реальный URL
+    url: 'https://qauto.forstudy.space/api/cars', 
   }).then((response) => {
     // Проверка запроса
     expect(response.status).to.eq(200);
@@ -47,7 +47,7 @@ it('GET EXPENSE', () => {
 it('POST CAR', () => {
 cy.request({
   method: 'POST',
-  url: 'https://qauto.forstudy.space/api/cars', // Замените на ваш реальный URL
+  url: 'https://qauto.forstudy.space/api/cars',
   body: {
     carBrandId: '1',
     carModelId: '2',
